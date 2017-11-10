@@ -1,0 +1,57 @@
+<p class="Total-Tasks-4">Task Total: {{TaskTotal}}</p>
+
+
+
+<div class='container'>
+
+
+  <div class='Rectangle-3' *ngFor='let task of task1'>
+    <p class="Task">{{task.name}}<span><a href="javascript:void(0);" class="layer" (click)="show1()">+</a></span></p>
+  </div>
+  <div class="employeeBox" *ngIf="hide1">
+    <form class="Choose-Employee">
+      <div><input type="button" class="Employee" name="1" value="Employee A" (click)="incrementTotalLikes()"></div>
+      <div><input type="button" class="Employee" name="2" value="Employee B"></div>
+      <div><input type="button" class="Employee" name="3" value="Employee C"></div>
+    </form>
+  </div>
+
+
+
+  <div class='Rectangle-3' *ngFor='let task of task2'>
+    <p class="Task">{{task.name}}<span><a href="javascript:void(0);" class="layer" (click)="show2()">+</a></span></p>
+  </div>
+  <div class="employeeBox" *ngIf="hide2">
+    <form class="Choose-Employee">
+      <div><input type="submit" class="Employee" name="1" value="Employee A"></div>
+      <div><input type="submit" class="Employee" name="2" value="Employee B"></div>
+      <div><input type="submit" class="Employee" name="3" value="Employee C"></div>
+    </form>
+  </div>
+
+
+
+  <div class='Rectangle-3' *ngFor='let task of task3'>
+    <p class="Task">{{task.name}}<span><a href="javascript:void(0);" class="layer" (click)="show3()">+</a></span></p>
+  </div>
+  <div class="employeeBox" *ngIf="hide3">
+    <form class="Choose-Employee">
+      <div><input type="submit" class="Employee" name="1" value="Employee A"></div>
+      <div><input type="submit" class="Employee" name="2" value="Employee B"></div>
+      <div><input type="submit" class="Employee" name="3" value="Employee C"></div>
+    </form>
+  </div>
+
+  <div class='Rectangle-3' *ngFor='let task of task4'>
+    <p class="Task">{{task.name}}<span><a href="javascript:void(0);" class="layer" (click)="show4()">+</a></span></p>
+  </div>
+  <div class="employeeBox" *ngIf="hide4">
+    <form class="Choose-Employee">
+      <div><input type="submit" class="Employee" name="1" value="Employee A"></div>
+      <div><input type="submit" class="Employee" name="2" value="Employee B"></div>
+      <div><input type="submit" class="Employee" name="3" value="Employee C"></div>
+    </form>
+  </div>
+
+
+</div>

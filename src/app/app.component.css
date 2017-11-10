@@ -1,0 +1,35 @@
+.container{
+  width: 1202px;
+  height: 953px;
+  margin: auto auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: #ffffff;
+  justify-content: center;
+}
+
+.boxA{
+  display: inline-block;
+  margin-top: 2%;
+  width: 440px;
+}
+
+.line{
+  left:30%;
+  width: 1px;
+  height: 748px;
+  margin-top: 2%;
+  display: inline;
+  position:absolute;
+  border-left: solid 2px #c7c9ca;
+}
+
+.line-Copy{
+  left:60%;
+  width: 1px;
+  height: 748px;
+  margin-top: 2%;
+  display: inline;
+  position:absolute;
+  border-left: solid 2px #c7c9ca;
+}

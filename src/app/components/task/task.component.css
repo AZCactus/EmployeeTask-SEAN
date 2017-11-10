@@ -1,0 +1,61 @@
+.Total-Tasks-4 {
+  width: 133px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 20px;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #4a4a4a;
+}
+
+.Rectangle-3 {
+  margin:15px;
+  font-size: 20px;
+  font-family: Roboto;
+  text-align: center;
+  padding: .5px;
+  padding-bottom:10px;
+  width: 280px;
+  height: 50px;
+  color: white;
+  border-radius: 3px;
+  background-color: #ff526b;
+  z-index: -1;
+}
+
+.layer{
+  float: right;
+  padding-right: 12px;
+  text-decoration: none;
+  color:  #ffffff;
+}
+
+.employeeBox{
+  margin: 0px;
+  width: 167.7px;
+  height: 110px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #979797;
+  transform: translate(127px, -29px);
+  z-index: 1;
+}
+
+.Choose-Employee{
+  text-align: center;
+}
+
+.Employee{
+  width: 101px;
+  height: 22px;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: #4a4a4a;
+  border: 0px;
+  background-color: #ffffff;
+  margin: 5px;
+  margin-top: 7px;
+}
