@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { DataService } from '../../services/data.service'
 
 @Component({
   selector: 'app-task',
@@ -9,11 +10,12 @@ import 'rxjs/add/operator/map';
 })
 export class TaskComponent {
   TaskTotal: number;
-  id: any;
+  banana: any;
   task1: any;
   task2: any;
   task3: any;
   task4: any;
+  employeeA:any[]
 
   hide1:boolean = false;
   hide2:boolean = false;
@@ -35,23 +37,40 @@ export class TaskComponent {
   }
 
 
-  incrementTotalLikes(){
-    console.log("fired ")
-    this.http.post('http://localhost:3000/employee', this.id).subscribe( data=> {
-      console.log(data)
-    });
+
+
+
+  assignA(event, name){
+    const body = {name: `${name.target.name}`}
+
+    console.log(name.target.name)
+    this.http.post(`http://localhost:3000/assign/${event.target.value}`, this.banana, {
+    headers: new HttpHeaders().set('content-type', 'application/json'),
+  }).subscribe()
   }
 
+  // assignB(event, task){
+  //   this.dataService.addTaskB(task);
+  //   this.http.post(`http://localhost:3000/employee/${event.target.name}`, this.taskName).subscribe();
+  // }
+  // assignC(event, task){
+  //   this.dataService.addTaskC(task);
+  //   this.http.post(`http://localhost:3000/employee/${event.target.name}`, this.taskName).subscribe();
+  // }
+  //
 
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    public dataService:DataService
+  ) {}
 
 
   ngOnInit(): void {
     this.TaskTotal = 4;
-    this.id = 1;
+
     this.http.get('http://localhost:3000/task1').subscribe(data => {
-      console.log(data)
+      console.log('This One Here!!!!'+data)
       return this.task1 = data;
     });
     this.http.get('http://localhost:3000/task2').subscribe(data => {

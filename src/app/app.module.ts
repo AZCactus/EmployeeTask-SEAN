@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TaskComponent } from './components/task/task.component';
 
-import { TaskService } from './services/task.service';
+import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { AssignedComponent } from './components/assigned/assigned.component';
@@ -22,7 +22,7 @@ import { AssignedComponent } from './components/assigned/assigned.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [TaskService],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

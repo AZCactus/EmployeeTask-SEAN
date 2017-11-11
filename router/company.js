@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const model = require('../models');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
 
 
 router.get('/task1', (req, res) => {
@@ -35,17 +39,22 @@ router.get('/task4', (req, res) => {
     })
 });
 
-router.post('/employee/:id', (req, res, next) => {
+
+router.post('/assign/:id', (req, res, next) => {
   id = `${req.params.id}`
-    model.employee.build({
-      id: id
-    },{
-      isNewRecord: false
-    }).increment('totalTask')
+  console.log(req.query)
+    model.assign.build({
+      employeeId: id,
+      taskName: req.query.name
+    })
     .then((employees) => {
         return res.json(employees)
       })
 });
+
+
+
+
 
 
 

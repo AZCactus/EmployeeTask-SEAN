@@ -3,12 +3,20 @@ module.exports = (sequelize, DataTypes) => {
   var employee = sequelize.define('employee', {
     name: DataTypes.STRING,
     totalTask: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  }, {});
+
+
+
+  employee.associate = function(models) {
+      employee.hasMany(models.assign, {foreignKey: 'employeeId'});
+  }
+
+
+
+
+
+
+
+
   return employee;
 };
