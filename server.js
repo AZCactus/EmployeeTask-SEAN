@@ -3,21 +3,30 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
 const app = express();
-const cors = require('cors')
+const cors = require('cors');
 
 // Setting Cors
 app.use(cors())
 
-// CRUD HTTP
-const company = require('./router/company');
-app.use(company)
+
+// Angular DIST output folder
+app.use(express.static(path.join(__dirname, 'dist')));
+
+
 
 // Parsers
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
-// Angular DIST output folder
-app.use(express.static(path.join(__dirname, 'dist')));
+
+
+
+
+// CRUD HTTP
+const company = require('./router/company');
+app.use(company)
+
+
 
 // Send all other requests to the Angular app
 app.get('*', (req, res) => {
@@ -25,8 +34,9 @@ app.get('*', (req, res) => {
 });
 
 //Set Port
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || 3000;
 app.set('port', port);
+
 
 const server = http.createServer(app);
 

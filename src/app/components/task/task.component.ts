@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
-import { DataService } from '../../services/data.service'
+
 
 @Component({
   selector: 'app-task',
@@ -10,12 +10,11 @@ import { DataService } from '../../services/data.service'
 })
 export class TaskComponent {
   TaskTotal: number;
-  banana: any;
   task1: any;
   task2: any;
   task3: any;
   task4: any;
-  employeeA:any[]
+
 
   hide1:boolean = false;
   hide2:boolean = false;
@@ -40,29 +39,18 @@ export class TaskComponent {
 
 
 
-  assignA(event, name){
-    const body = {name: `${name.target.name}`}
-
-    console.log(name.target.name)
-    this.http.post(`http://localhost:3000/assign/${event.target.value}`, this.banana, {
-    headers: new HttpHeaders().set('content-type', 'application/json'),
-  }).subscribe()
+  assign(event){
+    const body = {name: `${event.target.name}`};
+    let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+    headers.append('Accept', 'application/json');
+    return this.http.post(`http://localhost:3000/assign/${event.target.id}`, body).subscribe()
   }
 
-  // assignB(event, task){
-  //   this.dataService.addTaskB(task);
-  //   this.http.post(`http://localhost:3000/employee/${event.target.name}`, this.taskName).subscribe();
-  // }
-  // assignC(event, task){
-  //   this.dataService.addTaskC(task);
-  //   this.http.post(`http://localhost:3000/employee/${event.target.name}`, this.taskName).subscribe();
-  // }
-  //
+
 
 
   constructor(
-    private http: HttpClient,
-    public dataService:DataService
+    private http: HttpClient
   ) {}
 
 
@@ -70,7 +58,6 @@ export class TaskComponent {
     this.TaskTotal = 4;
 
     this.http.get('http://localhost:3000/task1').subscribe(data => {
-      console.log('This One Here!!!!'+data)
       return this.task1 = data;
     });
     this.http.get('http://localhost:3000/task2').subscribe(data => {
@@ -82,9 +69,6 @@ export class TaskComponent {
     this.http.get('http://localhost:3000/task4').subscribe(data => {
       return this.task4 = data;
     });
-
-
-
 
 
 

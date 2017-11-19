@@ -2,7 +2,7 @@
 
 
 
-<div class='container'>
+<div class='col'>
 
 
   <div class='Rectangle-3' *ngFor='let task of task1'>
@@ -10,9 +10,9 @@
   </div>
   <div class="employeeBox" *ngIf="hide1">
     <form class="Choose-Employee">
-      <div><input type="button" class="Employee" name="Employee A" value="1" (click)="assignA($event, $name)"></div>
-      <div><input type="button" class="Employee" name="2" value="Employee B" (click)="assignB($event, 'Task 1')"></div>
-      <div><input type="button" class="Employee" name="3" value="Employee C" (click)="assignC($event, 'Task 1')"></div>
+      <div><input type="button" class="Employee" id="1" name="Task 1" value="Employee A" (click)="assign($event)"></div>
+      <div><input type="button" class="Employee" id="2" name="Task 1" value="Employee B" (click)="assign($event)"></div>
+      <div><input type="button" class="Employee" id="3" name="Task 1" value="Employee C" (click)="assign($event)"></div>
     </form>
   </div>
 
@@ -23,9 +23,9 @@
   </div>
   <div class="employeeBox" *ngIf="hide2">
     <form class="Choose-Employee">
-      <div><input type="submit" class="Employee" name="1" value="Employee A" (click)="assignA($event, 'Task 2')"></div>
-      <div><input type="submit" class="Employee" name="2" value="Employee B" (click)="assignB($event, 'Task 2')"></div>
-      <div><input type="submit" class="Employee" name="3" value="Employee C" (click)="assignC($event, 'Task 2')"></div>
+      <div><input type="submit" class="Employee" id="1" name="Task 2" value="Employee A" (click)="assign($event)"></div>
+      <div><input type="submit" class="Employee" id="2" cname="Task 2" value="Employee B" (click)="assign($event)"></div>
+      <div><input type="submit" class="Employee" id="3" name="Task 2" value="Employee C" (click)="assign($event)"></div>
     </form>
   </div>
 
@@ -36,9 +36,9 @@
   </div>
   <div class="employeeBox" *ngIf="hide3">
     <form class="Choose-Employee">
-      <div><input type="submit" class="Employee" name="1" value="Employee A" (click)="assignA($event, 'Task 3')"></div>
-      <div><input type="submit" class="Employee" name="2" value="Employee B" (click)="assignB($event, 'Task 3')"></div>
-      <div><input type="submit" class="Employee" name="3" value="Employee C" (click)="assignC($event, 'Task 3')"></div>
+      <div><input type="submit" class="Employee" id="1" name="Task 3" value="Employee A"  (click)="assign($event)"></div>
+      <div><input type="submit" class="Employee" id="2" name="Task 3" value="Employee B"  (click)="assign($event)"></div>
+      <div><input type="submit" class="Employee" id="3" name="Task 3" value="Employee C"  (click)="assign($event)"></div>
     </form>
   </div>
 
@@ -47,9 +47,9 @@
   </div>
   <div class="employeeBox" *ngIf="hide4">
     <form class="Choose-Employee">
-      <div><input type="submit" class="Employee" name="1" value="Employee A" (click)="assignA($event, 'Task 4')"></div>
-      <div><input type="submit" class="Employee" name="2" value="Employee B" (click)="assignB($event, 'Task 4')"></div>
-      <div><input type="submit" class="Employee" name="3" value="Employee C" (click)="assignC($event, 'Task 4')"></div>
+      <div><input type="submit" class="Employee" id="1" name="Task 4" value="Employee A" (click)="assign($event)"></div>
+      <div><input type="submit" class="Employee" id="2" name="Task 4" value="Employee B" (click)="assign($event)"></div>
+      <div><input type="submit" class="Employee" id="3" name="Task 4" value="Employee C" (click)="assign($event)"></div>
     </form>
   </div>
 

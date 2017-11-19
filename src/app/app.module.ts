@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { DataService } from './data.service';
 
 import { AppComponent } from './app.component';
 import { TaskComponent } from './components/task/task.component';
 
-import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './components/employee/employee.component';
-import { AssignedComponent } from './components/assigned/assigned.component';
+import { AssignComponent } from './components/assign/assign.component';
 
 
 @NgModule({
@@ -16,7 +15,7 @@ import { AssignedComponent } from './components/assigned/assigned.component';
     AppComponent,
     TaskComponent,
     EmployeeComponent,
-    AssignedComponent
+    AssignComponent
   ],
   imports: [
     BrowserModule,
